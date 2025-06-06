@@ -1,9 +1,12 @@
+/// <reference types="cypress" />
+
 describe('Home page tests', () => {
   beforeEach(() => {
     cy.visit('https://adopet-frontend-cypress.vercel.app/');
   });
 
   it('Access message page by clicking on one of "Falar com o responsável" buttons', () => {
+    // Only after login
     cy.get('.button').contains('Ver pets disponíveis para adoção').click();
     cy.get('[aria-label="Falar com responsável"]').eq(3).click();
 

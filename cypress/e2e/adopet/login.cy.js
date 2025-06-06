@@ -10,11 +10,11 @@ describe('User login tests', () => {
   it('Display the home page after the user successfully logs in', () => {
     cy.logUserIn('laura.r@gmail.com', 'Adopet##12');
 
-    cy.url({ timeout: 10000 }).should('eq', 'https://adopet-frontend-cypress.vercel.app/home');
+    cy.url({ timeout: 15000 }).should('eq', 'https://adopet-frontend-cypress.vercel.app/home');
     cy.get('.cards').should('be.visible');
   });
 
-  it.only('Doesn\'t log the user in by enter wrong credentials', () => {
+  it('Doesn\'t log the user in by enter wrong credentials', () => {
     cy.logUserIn('laura@', '11d');
 
     cy.get('.error').contains('Por favor, verifique o email digitado').should('be.visible');

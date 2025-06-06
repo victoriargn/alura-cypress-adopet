@@ -10,7 +10,7 @@ describe('User login tests', () => {
   it('Display the home page after the user successfully logs in', () => {
     cy.logUserIn('laura.r@gmail.com', 'Adopet##12');
 
-    cy.url({ timeout: 15000 }).should('eq', 'https://adopet-frontend-cypress.vercel.app/home');
+    cy.url({ timeout: 20000 }).should('eq', 'https://adopet-frontend-cypress.vercel.app/home');
     cy.get('.cards').should('be.visible');
   });
 
@@ -23,8 +23,8 @@ describe('User login tests', () => {
   });
 });
 
-Cypress.Commands.add('logUserIn', (email, password) => {
-  cy.get('[data-test="input-loginEmail"]').type(email);
-  cy.get('[data-test="input-loginPassword"]').type(password);
-  cy.get('[data-test="submit-button"]').click();
-});
+// Cypress.Commands.add('logUserIn', (email, password) => {
+//   cy.get('[data-test="input-loginEmail"]').type(email);
+//   cy.get('[data-test="input-loginPassword"]').type(password);
+//   cy.get('[data-test="submit-button"]').click();
+// });

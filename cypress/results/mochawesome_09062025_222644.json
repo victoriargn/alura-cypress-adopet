@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-06-10T01:26:39.467Z",
+    "end": "2025-06-10T01:26:44.680Z",
+    "duration": 5213,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4317b5fe-0fb9-47d8-a7bf-0408a00b3741",
+      "title": "",
+      "fullFile": "cypress/e2e/adopet/home_page.cy.js",
+      "file": "cypress/e2e/adopet/home_page.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7b1c7d9a-07af-423a-a1a1-6cd72766868c",
+          "title": "Home page tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Access message page by clicking on one of \"Falar com o responsável\" buttons",
+              "fullTitle": "Home page tests Access message page by clicking on one of \"Falar com o responsável\" buttons",
+              "timedOut": null,
+              "duration": 4151,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-test=\"login-button\"]').click();\ncy.logUserIn('laura.r@gmail.com', 'Adopet##12');\ncy.get('[aria-label=\"Falar com responsável\"]').eq(3).click();\ncy.get('.message').contains('Envie uma mensagem para a pessoa ou instituição que está cuidado do animal:').should('be.visible');",
+              "err": {},
+              "uuid": "180fbe15-76ec-4f3c-a946-0ae8de8e7fe6",
+              "parentUUID": "7b1c7d9a-07af-423a-a1a1-6cd72766868c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "180fbe15-76ec-4f3c-a946-0ae8de8e7fe6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4151,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": true,
+        "charts": true,
+        "html": true,
+        "json": true,
+        "timestamp": "ddmmyyyy_HHMMss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

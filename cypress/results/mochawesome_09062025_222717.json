@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-06-10T01:27:12.920Z",
+    "end": "2025-06-10T01:27:17.358Z",
+    "duration": 4438,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bbc5f124-8890-4990-b702-10fd646c825c",
+      "title": "",
+      "fullFile": "cypress/e2e/adopet/register_user.cy.js",
+      "file": "cypress/e2e/adopet/register_user.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "faee5048-3569-490b-83cd-3cbdb2f04fe4",
+          "title": "User registration tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Register a new user sucessfully",
+              "fullTitle": "User registration tests Register a new user sucessfully",
+              "timedOut": null,
+              "duration": 2293,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.registerNewUser('Laura Regina', 'laura.r@gmail.com', 'Adopet##12');\n// Add assertion",
+              "err": {},
+              "uuid": "3d76f35c-0124-4e4e-9c5c-f65b9934818c",
+              "parentUUID": "faee5048-3569-490b-83cd-3cbdb2f04fe4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Display messages error for empty required fields",
+              "fullTitle": "User registration tests Display messages error for empty required fields",
+              "timedOut": null,
+              "duration": 1185,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-test=\"submit-button\"]').click();\ncy.get('.error').contains('É necessário informar um endereço de email').should('be.visible');\ncy.get('.error').contains('Crie uma senha').should('be.visible');\ncy.get('.error').contains('Repita a senha criada acima').should('be.visible');",
+              "err": {},
+              "uuid": "eee5979d-3f93-4a48-af77-aef3f6f15f29",
+              "parentUUID": "faee5048-3569-490b-83cd-3cbdb2f04fe4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3d76f35c-0124-4e4e-9c5c-f65b9934818c",
+            "eee5979d-3f93-4a48-af77-aef3f6f15f29"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3478,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": true,
+        "charts": true,
+        "html": true,
+        "json": true,
+        "timestamp": "ddmmyyyy_HHMMss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

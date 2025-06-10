@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-06-10T01:22:38.484Z",
+    "end": "2025-06-10T01:22:43.748Z",
+    "duration": 5264,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2423a6c1-fb0a-4818-9074-73328869bca4",
+      "title": "",
+      "fullFile": "cypress/e2e/adopet/login.cy.js",
+      "file": "cypress/e2e/adopet/login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3d4d7db9-3552-4b09-a48d-4abe35645765",
+          "title": "User login tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Display the home page after the user successfully logs in",
+              "fullTitle": "User login tests Display the home page after the user successfully logs in",
+              "timedOut": null,
+              "duration": 3117,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.logUserIn('laura.r@gmail.com', 'Adopet##12');\ncy.url({\n  timeout: 20000\n}).should('eq', 'https://adopet-frontend-cypress.vercel.app/home');\ncy.get('.cards').should('be.visible');",
+              "err": {},
+              "uuid": "b9d67aad-ebcf-41ec-8322-19b5df6df2f3",
+              "parentUUID": "3d4d7db9-3552-4b09-a48d-4abe35645765",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Doesn't log the user in by enter wrong credentials",
+              "fullTitle": "User login tests Doesn't log the user in by enter wrong credentials",
+              "timedOut": null,
+              "duration": 1215,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.logUserIn('laura@', '11d');\ncy.get('.error').contains('Por favor, verifique o email digitado').should('be.visible');\ncy.get('.error').contains('A senha deve conter pelo menos uma letra maiúscula, um número e ter entre 6 e 15 caracteres').should('be.visible');",
+              "err": {},
+              "uuid": "2efdc1ca-70fe-49d7-a769-198bea530544",
+              "parentUUID": "3d4d7db9-3552-4b09-a48d-4abe35645765",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b9d67aad-ebcf-41ec-8322-19b5df6df2f3",
+            "2efdc1ca-70fe-49d7-a769-198bea530544"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4332,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": true,
+        "charts": true,
+        "html": true,
+        "json": true,
+        "timestamp": "ddmmyyyy_HHMMss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

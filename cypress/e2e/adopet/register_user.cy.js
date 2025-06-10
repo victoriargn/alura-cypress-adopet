@@ -7,12 +7,7 @@ describe('User registration tests', () => {
   });
 
   it('Register a new user sucessfully', () => {
-    cy.get('[data-test="input-name"]').type('Laura Regina');
-    cy.get('[data-test="input-email"]').type('laura.r@gmail.com');
-    cy.get('[data-test="input-password"]').type('Adopet##12');
-    cy.get('[data-test="input-confirm-password"]').type('Adopet##12');
-
-    cy.get('[data-test="submit-button"]').click();
+    cy.registerNewUser('Laura Regina','laura.r@gmail.com','Adopet##12');
 
     // Add assertion
   });

@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 describe('API Adopet tests', () => {
-  const authorization = `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhOTIyZThlNi02NzY2LTQ4YjYtYmM3NS1lYzdlNjU1OWZiZGUiLCJhZG9wdGVyTmFtZSI6IkxhdXJhIFJlZ2luYSIsImlhdCI6MTc0OTY4Njc0NCwiZXhwIjoxNzQ5OTQ1OTQ0fQ.d5sB5bS9bzN0QeA-surLpR34-pWjb5PLhxLpZoJMvqY`;
+  const authorization = '';
 
   it('Check if body contains the correct user name', () => {
     cy.request({

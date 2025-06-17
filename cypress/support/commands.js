@@ -9,10 +9,10 @@
 // ***********************************************
 //
 Cypress.Commands.add('registerNewUser', (name, email, password) => {
-  cy.get('[data-test="input-name"]').type(name);
-  cy.get('[data-test="input-email"]').type(email);
-  cy.get('[data-test="input-password"]').type(password);
-  cy.get('[data-test="input-confirm-password"]').type(password);
+  cy.get('[data-test="input-name"]').clear().type(name);
+  cy.get('[data-test="input-email"]').clear().type(email);
+  cy.get('[data-test="input-password"]').clear().type(password);
+  cy.get('[data-test="input-confirm-password"]').clear().type(password);
 
   cy.get('[data-test="submit-button"]').click();
 });

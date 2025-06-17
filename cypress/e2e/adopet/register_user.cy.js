@@ -19,4 +19,4 @@ describe('User registration tests', () => {
     cy.get('.error').contains('Crie uma senha').should('be.visible');
     cy.get('.error').contains('Repita a senha criada acima').should('be.visible');
   });
-})
+});

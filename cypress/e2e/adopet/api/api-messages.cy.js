@@ -1,13 +1,13 @@
 /// <reference types="cypress" />
 
 describe('API Adopet tests', () => {
-  const authorization = '';
 
   it('Check if body contains the correct user name', () => {
     cy.request({
       method: 'GET',
       url: 'https://adopet-api-i8qu.onrender.com/adotante/perfil/a922e8e6-6766-48b6-bc75-ec7e6559fbde',
-      headers: { authorization }
+      headers: Cypress.env()
+
     }).then((res) => {
       expect(res.status).to.be.equal(200)
       expect(res.body).is.not.empty
@@ -20,7 +20,7 @@ describe('API Adopet tests', () => {
     cy.request({
       method: 'GET',
       url: 'https://adopet-api-i8qu.onrender.com/mensagem/a922e8e6-6766-48b6-bc75-ec7e6559fbde',
-      headers: { authorization }
+      headers: Cypress.env()
     }).then((res) => {
       expect(res.status).to.be.equal(200)
       expect(res.body).is.not.empty

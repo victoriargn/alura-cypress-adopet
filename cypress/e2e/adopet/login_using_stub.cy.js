@@ -11,7 +11,7 @@ describe('User login tests', () => {
     }).as('stubPost')
   });
 
-  it.only('Fail even sending correct crecentials', () => {
+  it('Fail even sending correct crecentials', () => {
     const user = Cypress.env('user');
     
     cy.logUserIn(user.user_email, user.user_password);

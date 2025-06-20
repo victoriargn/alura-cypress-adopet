@@ -7,9 +7,8 @@ describe('User registration tests', () => {
   });
 
   it('Register a new user sucessfully', () => {
-    cy.registerNewUser('Laura Regina','laura.r@gmail.com','Adopet##12');
-
-    // Add assertion
+    const user = Cypress.env('user');
+    cy.registerNewUser(user.user_name, user.user_email, user.user_password);
   });
 
   it('Display messages error for empty required fields', () => {

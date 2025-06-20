@@ -2,18 +2,19 @@
 
 describe('API Adopet tests', () => {
   const authorization = Cypress.env('authorization');
+  const user = Cypress.env('user');
 
   it('Check if body contains the correct user name', () => {
     cy.request({
       method: 'GET',
-      url: `https://adopet-api-i8qu.onrender.com/adotante/perfil/${Cypress.env('user_id')}`,
+      url: `https://adopet-api-i8qu.onrender.com/adotante/perfil/${user.user_id}`,
       headers: { authorization }
 
     }).then((res) => {
       expect(res.status).to.be.equal(200)
       expect(res.body).is.not.empty
       expect(res.body).to.have.property('perfil')
-      expect(res.body.perfil.nome).to.be.equal('Laura Regina')
+      expect(res.body.perfil.nome).to.be.equal(user.user_name)
     })
   });
 
@@ -21,7 +22,7 @@ describe('API Adopet tests', () => {
 
     cy.request({
       method: 'GET',
-      url: `https://adopet-api-i8qu.onrender.com/mensagem/${Cypress.env('user_id')}`,
+      url: `https://adopet-api-i8qu.onrender.com/mensagem/${user.user_id}`,
       headers: { authorization }
     }).then((res) => {
       expect(res.status).to.be.equal(200)
@@ -30,10 +31,10 @@ describe('API Adopet tests', () => {
     })
   });
 
-  it.only('Check if the 401 status code is returned by not sending authorization header', () => {
+  it('Check if the 401 status code is returned by not sending authorization header', () => {
     cy.request({
       method: 'GET',
-      url: 'https://adopet-api-i8qu.onrender.com/mensagem/a922e8e6-6766-48b6-bc75-ec7e6559fbde',
+      url: `https://adopet-api-i8qu.onrender.com/mensagem/${user.user_id}`,
       headers: '',
       failOnStatusCode: false
     }).then((res) => {

@@ -1,5 +1,6 @@
 node_modules/
 videos/
+screenshots/
 results/
 *.tmp
 cypress.env.json

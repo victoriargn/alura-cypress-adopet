@@ -8,7 +8,8 @@ describe('User login tests', () => {
   });
 
   it('Display the home page after the user successfully logs in', () => {
-    cy.logUserIn('laura.r@gmail.com', 'Adopet##12');
+    const user = Cypress.env('user');
+    cy.logUserIn(user.user_email, user.user_password);
 
     cy.url({ timeout: 20000 }).should('eq', 'https://adopet-frontend-cypress.vercel.app/home');
     cy.get('.cards').should('be.visible');
